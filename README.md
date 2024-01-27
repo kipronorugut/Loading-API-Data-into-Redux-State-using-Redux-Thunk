@@ -29,7 +29,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/react-redux-thunk-async-example.git
+git clone https://github.com/kipronorugut/Loading-API-Data-into-Redux-State-using-Redux-Thunk
 Change to the project directory:
 
 bash
