@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { fetchUsers } from "./actions";
+import { ClipLoader } from "react-spinners"; // Import the spinner component
 
-function App() {
+const App = ({ users, loading, error, fetchUsers }) => {
+  useEffect(() => {
+    fetchUsers();
+  }, [fetchUsers]);
+
+  if (loading) {
+    return (
+      <div className="loading-spinner">
+        <ClipLoader color="#36D7B7" loading={loading} size={50} />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {console.log(loading)}
+      <h1>Users</h1>
+      <ul>
+        {Array.isArray(users) &&
+          users.map((user) => (
+            <li key={user.id}>
+              {user.name} - {user.email}
+            </li>
+          ))}
+      </ul>
     </div>
   );
-}
+};
 
-export default App;
+const mapStateToProps = (state) => ({
+  users: state.users.users,
+  loading: state.users.loading,
+  error: state.users.error,
+});
+
+const mapDispatchToProps = {
+  fetchUsers,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
