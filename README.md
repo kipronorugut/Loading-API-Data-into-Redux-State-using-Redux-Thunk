@@ -32,7 +32,7 @@ Make sure you have Node.js and npm installed on your machine.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/react-redux-thunk-example.git
+git clone https://github.com/kipronorugut/Loading-API-Data-into-Redux-State-using-Redux-Thunk
 
 ```bash
 cd react-redux-thunk-example
@@ -57,31 +57,3 @@ The project structure is organized as follows:
   - `App.js`: Main application component.
 - `public/`: Static assets and HTML template.
 - `mocker-api.config.js`: Mocker API configuration.
-
-## Usage
-
-Explain how to use and interact with the application. Provide examples if necessary.
-
-## Mocker API
-
-Describe the Mocker API setup and configuration. Explain how to customize the mock responses.
-
-## Redux State Management
-
-Detail how Redux is used to manage the global state in the application.
-
-## Asynchronous Actions with Redux Thunk
-
-Illustrate the usage of Redux Thunk for handling asynchronous actions.
-
-## Loading Spinners
-
-Explain the implementation of loading spinners to enhance the user experience during data fetching.
-
-## Contributing
-
-Provide guidelines for contributing to the project, including how to report issues and submit pull requests.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
